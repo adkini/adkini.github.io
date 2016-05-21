@@ -1,0 +1,308 @@
+/**
+ * Site header
+ */
+
+@font-face {// new font downloaded and added in root folder.
+  font-family: "new";
+  src: url(/assets/new2.ttf) format("truetype");
+}
+
+
+
+
+.site-header {
+    border-top: 0px solid $grey-color-dark;
+    border-bottom: 1px solid $grey-color-light;
+  
+    min-height: 106px;
+    background-color:LightSlateGray;
+
+    // Positioning context for the mobile navigation icon
+    position: relative;
+}
+.site-subt{
+    font-size: 15px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 100;
+    color: white;
+    position: absolute;
+    top:80px;
+    margin-left:150px;
+}
+
+.site-title {// Site title appears on top left.
+    font-size: 45px;
+    font-family: new;
+    font-weight: 800;
+    color: white;
+    position: absolute;
+    top:20px;
+    line-height: 56px;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    float: left;
+    &:hover{
+
+      text-decoration: none;
+    }
+   // background-color:black;
+
+    &,
+    &:visited {
+        color: white;
+    }
+}
+
+.site-nav {// container for whole navigation section.
+    float: right;
+    margin-top:50px;
+    
+    //color: white;
+    line-height: 56px;
+    font-weight: 800;
+
+    .menu-icon {
+       display: none;
+    }
+
+    .page-link {// used for about,blog on top sections on right
+        color: white;
+        
+        font-size:20px;
+        line-height: $base-line-height;
+         font-family:"Comic Sans MS", cursive, sans-serif;
+        // Gaps between nav items, but not on the last one
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+
+       
+    }
+
+    @include media-query($on-palm) {
+        position: absolute;
+        top: 9px;
+        right: $spacing-unit / 2;
+        background-color: $background-color;
+        border: 1px solid $grey-color-light;
+        border-radius: 5px;
+        text-align: right;
+
+        .menu-icon {
+            display: block;
+            float: right;
+            width: 36px;
+            height: 26px;
+            line-height: 0;
+            padding-top: 10px;
+            text-align: center;
+
+            > svg {
+                width: 18px;
+                height: 15px;
+
+                path {
+                    fill: $grey-color-dark;
+                }
+            }
+        }
+
+        .trigger {
+            clear: both;
+            display: none;
+        }
+
+        &:hover .trigger {
+            display: block;
+            padding-bottom: 5px;
+        }
+
+        .page-link {
+            display: block;
+            padding: 5px 10px;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+            margin-left: 20px;
+        }
+    }
+}
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+    border-top: 1px solid $grey-color-light;
+   // padding: $spacing-unit 0;
+    padding-top:5px;
+    max-height:15px;
+}
+
+.footer-heading {
+    margin-top:0px;
+    font-size: 15px;
+   // margin-bottom: $spacing-unit / 2;
+     font-family:"Comic Sans MS", cursive, sans-serif;
+}
+
+.contact-list,
+.social-media-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.footer-col-wrapper {
+    font-size: 15px;
+    color: $grey-color;
+    margin-left: -$spacing-unit / 2;
+    @extend %clearfix;
+}
+
+.footer-col {
+    float: left;
+    //margin-bottom: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+}
+
+.footer-col-1 {
+    width: -webkit-calc(30% - (#{$spacing-unit} / 2));
+    width:         calc(30% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-2 {
+    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+    width:         calc(20% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+    width:         calc(20% - (#{$spacing-unit} / 2));
+}
+.footer-col-4 {
+    width: -webkit-calc(30% - (#{$spacing-unit} / 2));
+    width:         calc(30% - (#{$spacing-unit} / 2));
+}
+
+@include media-query($on-laptop) {
+    .footer-col-1,
+    .footer-col-2 {
+        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+        width:         calc(50% - (#{$spacing-unit} / 2));
+    }
+
+    .footer-col-3 {
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+@include media-query($on-palm) {
+    .footer-col {
+        float: none;
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+
+
+/**
+ * Page content
+ */
+.page-content {
+    padding: $spacing-unit 0;
+    min-height: 400px;
+}
+
+.page-heading {
+    position:relative;
+    left: 350px;
+     font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size: 30px;
+    font-weight: 300px;
+}
+.me{
+     font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size: 18px;
+}
+
+
+.post-list {
+    margin-left: 0;
+    list-style: none;
+
+    > li {
+        margin-bottom: $spacing-unit;
+    }
+}
+
+.post-meta {
+    font-size: $small-font-size;
+    color: $grey-color;
+}
+
+.post-link {
+    display: block;
+    font-size: 24px;
+}
+.home img{
+    max-width:20%;
+    border-radius: 50%;
+    float:left;
+    padding-right:10px;
+    //float:left;
+   // position:absolute;
+    
+}
+
+.tags{
+    font-size:16px;
+    font-weight:200px;
+    font-family:"Comic Sans MS", cursive, sans-serif;
+}
+
+ /* Posts
+ */
+.post-header {
+    margin-bottom: $spacing-unit;
+}
+
+.post-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1;
+
+    @include media-query($on-laptop) {
+        font-size: 36px;
+    }
+}
+
+.post-content {
+    margin-bottom: $spacing-unit;
+
+    h2 {
+        font-size: 32px;
+
+        @include media-query($on-laptop) {
+            font-size: 28px;
+        }
+    }
+
+    h3 {
+        font-size: 26px;
+
+        @include media-query($on-laptop) {
+            font-size: 22px;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+
+        @include media-query($on-laptop) {
+            font-size: 18px;
+        }
+    }
+}
